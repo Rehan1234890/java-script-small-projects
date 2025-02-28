@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">To-Do List</h2>
+        
+        <!-- Task Form -->
+        <div class="card p-3">
+            <form id="taskForm">
+                <div class="mb-2">
+                    <input type="text" id="taskTitle" class="form-control" placeholder="Task Title" required>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="taskDescription" class="form-control" placeholder="Task Description" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList" class="list-group mt-3"></ul>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="editTaskId">
+                    <div class="mb-2">
+                        <label>Task Title</label>
+                        <input type="text" id="editTaskTitle" class="form-control" required>
+                    </div>
+                    <div class="mb-2">
+                        <label>Task Description</label>
+                        <input type="text" id="editTaskDescription" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="updateTask()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
